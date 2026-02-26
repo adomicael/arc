@@ -3,66 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARC - Privacy Policy</title>
+    <title>Arc — From intent to execution</title>
+    <meta name="description" content="Arc turns long-term goals into structured, executable plans. Track time, execute daily, and build evidence of progress.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #F7F6F4;
+            --text: #1a1a1a;
+            --text-secondary: #666;
+            --text-tertiary: #999;
+            --border: #e0ddd8;
+            --card-bg: #ffffff;
+            --nav-bg: rgba(247, 246, 244, 0.8);
+            --max-width: 1080px;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
-            color: #1a1a1a;
-            max-width: 640px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Navbar --- */
+        nav {
+            position: fixed;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 32px);
+            max-width: var(--max-width);
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        nav .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        nav .nav-links a:hover { color: var(--text); }
+
+        /* --- Hero --- */
+        .hero {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 160px 24px 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 80px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 16px;
+        }
+
+        .hero .tagline {
+            font-size: clamp(18px, 3vw, 22px);
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .hero .description {
+            font-size: 16px;
+            color: var(--text-tertiary);
+            max-width: 480px;
+            margin: 0 auto 40px;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--text);
+            color: var(--bg);
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .cta:hover { opacity: 0.85; }
+
+        .cta svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* --- Features --- */
+        .features {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 100px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 640px) {
+            .features { grid-template-columns: 1fr; }
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .feature-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card .icon {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .feature-card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* --- Footer --- */
+        footer {
+            max-width: var(--max-width);
             margin: 0 auto;
             padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
         }
-        h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
-        h2 { font-size: 20px; font-weight: 600; margin-top: 32px; margin-bottom: 12px; }
-        p { margin-bottom: 12px; color: #333; }
-        .subtitle { color: #666; font-size: 14px; margin-bottom: 32px; }
-        a { color: #007AFF; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        ul { margin-left: 20px; margin-bottom: 12px; }
-        li { margin-bottom: 6px; color: #333; }
+
+        footer .made-by {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        footer .made-by a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        footer .made-by a:hover { text-decoration: underline; }
+
+        footer .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        footer .footer-links a {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer .footer-links a:hover { color: var(--text); }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p class="subtitle">Last updated: February 2026</p>
 
-    <h2>What ARC Collects</h2>
-    <p>ARC stores all your data locally on your device using Apple's SwiftData framework. This includes:</p>
-    <ul>
-        <li>Goals, plans, and mandates you create</li>
-        <li>Time tracking sessions</li>
-        <li>Notes and preferences</li>
-    </ul>
-    <p>This data never leaves your device unless you use the AI chat feature.</p>
+<nav>
+    <a href="/arc/" class="logo">Arc</a>
+    <div class="nav-links">
+        <a href="/arc/support/">Support</a>
+        <a href="/arc/privacy/">Privacy</a>
+    </div>
+</nav>
 
-    <h2>AI Chat</h2>
-    <p>When you use the per-goal AI assistant, your messages and goal context are sent to a Supabase Edge Function, which forwards them to OpenAI for processing. These messages are used solely to generate a response and are not stored on our servers.</p>
-    <p>OpenAI may process your messages according to their own privacy policy. No conversation history is stored server-side by ARC.</p>
+<section class="hero">
+    <h1>Arc</h1>
+    <p class="tagline">From intent to execution — with evidence.</p>
+    <p class="description">Turn long-term goals into structured daily actions. Track your time, execute with clarity, and build a record of real progress.</p>
+    <a href="https://apps.apple.com/app/arc" class="cta">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Download on the App Store
+    </a>
+</section>
 
-    <h2>Anonymous Authentication</h2>
-    <p>ARC creates an anonymous device-level session via Supabase Auth for rate limiting purposes. This session:</p>
-    <ul>
-        <li>Contains no personally identifiable information (PII)</li>
-        <li>Is not linked to any email, phone number, or account</li>
-        <li>Is used solely to prevent abuse of the AI chat service</li>
-    </ul>
+<section class="features">
+    <div class="feature-card">
+        <div class="icon">◎</div>
+        <h3>Structured Plans</h3>
+        <p>Break goals into Year, Month, Week, and Day. Every level connects to the one above — nothing floats without context.</p>
+    </div>
+    <div class="feature-card">
+        <div class="icon">◷</div>
+        <h3>Time as Evidence</h3>
+        <p>Deep work timer and manual logging bound to each goal. Hours logged are proof of work, not vanity metrics.</p>
+    </div>
+    <div class="feature-card">
+        <div class="icon">▣</div>
+        <h3>Daily Mandates</h3>
+        <p>Concrete actions for each day. No open-ended to-do lists — just clear tasks that move the needle on your goals.</p>
+    </div>
+    <div class="feature-card">
+        <div class="icon">△</div>
+        <h3>AI That Advises</h3>
+        <p>Per-goal AI chat that references your data, surfaces blind spots, and helps you think — without touching your plans.</p>
+    </div>
+</section>
 
-    <h2>Notifications</h2>
-    <p>ARC may request permission to send local notifications for daily nudges and per-goal reminders. All notifications are scheduled locally on your device. No push notification infrastructure or server is involved.</p>
+<footer>
+    <div class="made-by">Made by <a href="https://synced.design">synced.design</a></div>
+    <div class="footer-links">
+        <a href="/arc/support/">Support</a>
+        <a href="/arc/privacy/">Privacy</a>
+    </div>
+</footer>
 
-    <h2>Third-Party Services</h2>
-    <ul>
-        <li><strong>Supabase</strong> &mdash; Edge Functions hosting and anonymous auth. <a href="https://supabase.com/privacy">Privacy Policy</a></li>
-        <li><strong>OpenAI</strong> &mdash; AI chat processing. <a href="https://openai.com/privacy">Privacy Policy</a></li>
-    </ul>
-    <p>ARC does not use any analytics, crash reporting, or third-party tracking SDKs.</p>
+<script>
+    const cards = document.querySelectorAll('.feature-card');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                const card = entry.target;
+                const index = Array.from(cards).indexOf(card);
+                setTimeout(() => card.classList.add('visible'), index * 120);
+                observer.unobserve(card);
+            }
+        });
+    }, { threshold: 0.15 });
 
-    <h2>Data Deletion</h2>
-    <p>All your data is stored locally. Deleting the ARC app from your device permanently deletes all your data. There is no server-side data to request deletion of.</p>
+    cards.forEach(card => observer.observe(card));
+</script>
 
-    <h2>Contact</h2>
-    <p>For questions about this privacy policy, contact: <a href="mailto:privacy@adomicael.com">privacy@adomicael.com</a></p>
 </body>
 </html>

@@ -176,28 +176,35 @@
 
 <div class="content">
     <h1>Privacy Policy</h1>
-    <p class="subtitle">Last updated: February 2026</p>
+    <p class="subtitle">Last updated: May 16, 2026</p>
 
     <h2>What Arc Collects</h2>
     <p>Arc stores all your data locally on your device using Apple's SwiftData framework. This includes:</p>
     <ul>
-        <li>Goals, plans, and mandates you create</li>
+        <li>Goals, plans, and tasks you create</li>
         <li>Time tracking sessions</li>
-        <li>Notes and preferences</li>
+        <li>Notes, weekly commitments, and preferences</li>
     </ul>
-    <p>This data never leaves your device unless you use the AI chat feature.</p>
+    <p>This personal goal data stays on your device unless you use the AI chat feature.</p>
 
     <h2>AI Chat</h2>
     <p>When you use the per-goal AI assistant, your messages and goal context are sent to a Supabase Edge Function, which forwards them to OpenAI for processing. These messages are used solely to generate a response and are not stored on our servers.</p>
     <p>OpenAI may process your messages according to their own privacy policy. No conversation history is stored server-side by Arc.</p>
 
     <h2>Anonymous Authentication</h2>
-    <p>Arc creates an anonymous device-level session via Supabase Auth for rate limiting purposes. This session:</p>
+    <p>Arc creates an anonymous device-level session via Supabase Auth for rate limiting and app functionality. This session:</p>
     <ul>
         <li>Contains no personally identifiable information (PII)</li>
         <li>Is not linked to any email, phone number, or account</li>
-        <li>Is used solely to prevent abuse of the AI chat service</li>
+        <li>Is used to protect the AI chat service and keep backend requests reliable</li>
     </ul>
+
+    <h2>Product Analytics</h2>
+    <p>Arc uses PostHog to understand onboarding flow, paywall events, and broad product interaction patterns. Analytics events are tied to a randomly generated install ID, not your name, email, Apple ID, or advertising identifier.</p>
+    <p>PostHog is configured for manual product analytics only. Arc does not use advertising tracking, IDFA, cross-app tracking, session replay, or automatic screen recording.</p>
+
+    <h2>Subscriptions and Purchases</h2>
+    <p>Arc uses Apple StoreKit and Superwall to present paywalls, manage subscription status, and support the free trial. Purchase processing is handled by Apple. Arc uses subscription status only to unlock or gate app access.</p>
 
     <h2>Notifications</h2>
     <p>Arc may request permission to send local notifications for daily nudges and per-goal reminders. All notifications are scheduled locally on your device. No push notification infrastructure or server is involved.</p>
@@ -206,11 +213,13 @@
     <ul>
         <li><strong>Supabase</strong> — Edge Functions hosting and anonymous auth. <a href="https://supabase.com/privacy">Privacy Policy</a></li>
         <li><strong>OpenAI</strong> — AI chat processing. <a href="https://openai.com/privacy">Privacy Policy</a></li>
+        <li><strong>PostHog</strong> — product analytics. <a href="https://posthog.com/privacy">Privacy Policy</a></li>
+        <li><strong>Superwall</strong> — paywall and subscription management. <a href="https://superwall.com/privacy">Privacy Policy</a></li>
     </ul>
-    <p>Arc does not use any analytics, crash reporting, or third-party tracking SDKs.</p>
+    <p>Arc does not sell your data and does not use third-party services for advertising tracking.</p>
 
     <h2>Data Deletion</h2>
-    <p>All your data is stored locally. Deleting the Arc app from your device permanently deletes all your data. There is no server-side data to request deletion of.</p>
+    <p>Your goals, tasks, notes, and time logs are stored locally. Deleting the Arc app from your device permanently deletes that local data. Anonymous backend and analytics identifiers are not tied to an account you can log into.</p>
 
     <h2>Contact</h2>
     <p>For questions about this privacy policy, contact: <a href="mailto:arc@synced.design">arc@synced.design</a></p>

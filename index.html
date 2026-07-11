@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arc — From intent to execution</title>
-    <meta name="description" content="Arc turns long-term goals into structured, executable plans. Track time, execute daily, and build evidence of progress.">
+    <title>Gus — The Screen Time Guard Dog</title>
+    <meta name="description" content="Your screen time gets one honest number a day. Hit it, and Gus closes the door — mid-scroll. Real, timed work is the only key. No shame, no streaks.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,13 +12,17 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #F7F6F4;
-            --text: #1a1a1a;
-            --text-secondary: #666;
-            --text-tertiary: #999;
-            --border: #e0ddd8;
-            --card-bg: #ffffff;
-            --nav-bg: rgba(247, 246, 244, 0.8);
+            /* Canonical Gus palette (docs/GUS_ASSET_PROMPTS.md) */
+            --bg: #F8F5EF;            /* warm paper */
+            --text: #2B2119;          /* warm charcoal */
+            --text-secondary: #6F6353;
+            --text-tertiary: #A4967F;
+            --border: #E4DBC9;
+            --card-bg: #FDFBF6;
+            --nav-bg: rgba(248, 245, 239, 0.82);
+            --accent: #2F5D46;        /* collar forest green */
+            --accent-ink: #F5EEDF;    /* belly cream (text on accent) */
+            --brass: #C9A96A;         /* collar tag */
             --max-width: 1080px;
         }
 
@@ -56,6 +60,17 @@
             letter-spacing: -0.02em;
             color: var(--text);
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav .logo .tag {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 2px var(--brass);
         }
 
         nav .nav-links {
@@ -78,29 +93,45 @@
         .hero {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 160px 24px 80px;
+            padding: 168px 24px 72px;
             text-align: center;
+            animation: rise 0.7s ease both;
+        }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero .kicker {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: clamp(48px, 8vw, 80px);
+            font-size: clamp(48px, 8vw, 82px);
             font-weight: 700;
             letter-spacing: -0.03em;
-            line-height: 1.05;
-            margin-bottom: 16px;
+            line-height: 1.02;
+            margin-bottom: 20px;
         }
 
         .hero .tagline {
             font-size: clamp(18px, 3vw, 22px);
-            font-weight: 400;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
+            font-weight: 500;
+            color: var(--text);
+            max-width: 620px;
+            margin: 0 auto 12px;
         }
 
         .hero .description {
             font-size: 16px;
-            color: var(--text-tertiary);
-            max-width: 480px;
+            color: var(--text-secondary);
+            max-width: 540px;
             margin: 0 auto 40px;
         }
 
@@ -108,22 +139,41 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: var(--text);
-            color: var(--bg);
+            background: var(--accent);
+            color: var(--accent-ink);
             padding: 14px 28px;
             border-radius: 12px;
             font-size: 15px;
             font-weight: 600;
             text-decoration: none;
-            transition: opacity 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 6px 20px rgba(47, 93, 70, 0.22);
         }
 
-        .cta:hover { opacity: 0.85; }
+        .cta:hover { transform: translateY(-1px); box-shadow: 0 8px 26px rgba(47, 93, 70, 0.28); }
 
         .cta svg {
             width: 18px;
             height: 18px;
         }
+
+        /* --- Wedge strip --- */
+        .wedge {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px 88px;
+            text-align: center;
+        }
+
+        .wedge p {
+            font-size: clamp(20px, 3.4vw, 26px);
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.4;
+            color: var(--text);
+        }
+
+        .wedge .accent { color: var(--accent); }
 
         /* --- Features --- */
         .features {
@@ -155,8 +205,10 @@
         }
 
         .feature-card .icon {
-            font-size: 28px;
+            font-size: 26px;
+            line-height: 1;
             margin-bottom: 16px;
+            color: var(--accent);
         }
 
         .feature-card h3 {
@@ -169,7 +221,7 @@
         .feature-card p {
             font-size: 14px;
             color: var(--text-secondary);
-            line-height: 1.5;
+            line-height: 1.55;
         }
 
         /* --- Footer --- */
@@ -215,7 +267,7 @@
 <body>
 
 <nav>
-    <a href="/arc/" class="logo">Arc</a>
+    <a href="/arc/" class="logo"><span class="tag" aria-hidden="true"></span>Gus</a>
     <div class="nav-links">
         <a href="/arc/support/">Support</a>
         <a href="/arc/privacy/">Privacy</a>
@@ -223,35 +275,50 @@
 </nav>
 
 <section class="hero">
-    <h1>Arc</h1>
-    <p class="tagline">From intent to execution — with evidence.</p>
-    <p class="description">Turn long-term goals into structured daily actions. Track your time, execute with clarity, and build a record of real progress.</p>
+    <p class="kicker">The screen time guard dog</p>
+    <h1>He guards.<br>You build.</h1>
+    <p class="tagline">Your screen time gets one honest number a day. Hit it, and Gus closes the door — mid-scroll.</p>
+    <p class="description">No warning countdown, no bargaining screen — just closed. The only key is real, timed work on the life you actually want. No shame, no streaks.</p>
     <a href="https://apps.apple.com/app/arc" class="cta">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         Download on the App Store
     </a>
 </section>
 
+<section class="wedge">
+    <p>Losing your evenings to your phone isn't a willpower problem. It's a design problem — <span class="accent">theirs</span>. The fix is structural — <span class="accent">yours</span>.</p>
+</section>
+
 <section class="features">
     <div class="feature-card">
-        <div class="icon">◎</div>
-        <h3>Structured Plans</h3>
-        <p>Break goals into Year, Month, Week, and Day. Every level connects to the one above — nothing floats without context.</p>
+        <div class="icon" aria-hidden="true">◉</div>
+        <h3>The Door</h3>
+        <p>Every day, Gus gives your screen time one honest number — built from how you really use your phone, not a guess. Scroll until you hit it. Then the door closes. Real, timed work is the only way back in.</p>
     </div>
     <div class="feature-card">
-        <div class="icon">◷</div>
-        <h3>Time as Evidence</h3>
-        <p>Deep work timer and manual logging bound to each goal. Hours logged are proof of work, not vanity metrics.</p>
+        <div class="icon" aria-hidden="true">▣</div>
+        <h3>Protected Sessions</h3>
+        <p>Lock the apps that pull you out, for exactly as long as you say. Breaking one is a real decision — not a one-tap escape on the shield.</p>
     </div>
     <div class="feature-card">
-        <div class="icon">▣</div>
-        <h3>Daily Mandates</h3>
-        <p>Concrete actions for each day. No open-ended to-do lists — just clear tasks that move the needle on your goals.</p>
+        <div class="icon" aria-hidden="true">◷</div>
+        <h3>Weekly Time Budgets</h3>
+        <p>Commit hours to what actually matters to you, and watch the record build. Your time is the evidence of what you care about.</p>
     </div>
     <div class="feature-card">
-        <div class="icon">△</div>
+        <div class="icon" aria-hidden="true">◇</div>
+        <h3>Daily Routines</h3>
+        <p>The small things that add up — reading, meditation, a walk, a page in the journal — tracked without becoming another chore.</p>
+    </div>
+    <div class="feature-card">
+        <div class="icon" aria-hidden="true">▤</div>
+        <h3>Sunday Review</h3>
+        <p>An honest weekly bill: doors held, time built. Nothing hidden, nothing inflated. Misses are weather, not failure — tomorrow starts clean.</p>
+    </div>
+    <div class="feature-card">
+        <div class="icon" aria-hidden="true">△</div>
         <h3>AI That Advises</h3>
-        <p>Per-goal AI chat that references your data, surfaces blind spots, and helps you think — without touching your plans.</p>
+        <p>A focused chat, per activity. It advises and reflects — and never touches your data. You're always the one deciding.</p>
     </div>
 </section>
 
@@ -266,11 +333,11 @@
 <script>
     const cards = document.querySelectorAll('.feature-card');
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 const card = entry.target;
                 const index = Array.from(cards).indexOf(card);
-                setTimeout(() => card.classList.add('visible'), index * 120);
+                setTimeout(() => card.classList.add('visible'), index * 100);
                 observer.unobserve(card);
             }
         });

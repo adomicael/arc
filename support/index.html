@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arc — Support</title>
-    <meta name="description" content="Get help with Arc. Contact us or browse frequently asked questions.">
+    <title>Gus — Support</title>
+    <meta name="description" content="Get help with Gus. Contact us or browse frequently asked questions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,13 +12,16 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #F7F6F4;
-            --text: #1a1a1a;
-            --text-secondary: #666;
-            --text-tertiary: #999;
-            --border: #e0ddd8;
-            --card-bg: #ffffff;
-            --nav-bg: rgba(247, 246, 244, 0.8);
+            /* Canonical Gus palette (docs/GUS_ASSET_PROMPTS.md) */
+            --bg: #F8F5EF;
+            --text: #2B2119;
+            --text-secondary: #6F6353;
+            --text-tertiary: #A4967F;
+            --border: #E4DBC9;
+            --card-bg: #FDFBF6;
+            --nav-bg: rgba(248, 245, 239, 0.82);
+            --accent: #2F5D46;
+            --brass: #C9A96A;
             --max-width: 1080px;
         }
 
@@ -56,6 +59,17 @@
             letter-spacing: -0.02em;
             color: var(--text);
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav .logo .tag {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 2px var(--brass);
         }
 
         nav .nav-links {
@@ -133,7 +147,7 @@
         }
 
         .contact-value a {
-            color: var(--text);
+            color: var(--accent);
             text-decoration: none;
         }
 
@@ -224,7 +238,7 @@
 <body>
 
 <nav>
-    <a href="/arc/" class="logo">Arc</a>
+    <a href="/arc/" class="logo"><span class="tag" aria-hidden="true"></span>Gus</a>
     <div class="nav-links">
         <a href="/arc/support/">Support</a>
         <a href="/arc/privacy/">Privacy</a>
@@ -255,15 +269,19 @@
     <div class="faq">
         <details>
             <summary>Where is my data stored?</summary>
-            <p>All your data — goals, plans, mandates, time logs — is stored locally on your device using Apple's SwiftData. Nothing is synced to a server. Deleting the app permanently deletes all your data.</p>
+            <p>All your activity data — activities, plans, time logs — is stored locally on your device using Apple's SwiftData, and never synced to a server. Deleting the app permanently deletes it. (The AI chat and the Door's Lock Screen updates use a server, but nothing about your activities is stored there — see the Privacy Policy.)</p>
         </details>
         <details>
             <summary>How does the AI chat work?</summary>
-            <p>When you use the AI assistant, your messages and goal context are sent to a secure server-side function that forwards them to OpenAI. No conversation history is stored on our servers. The AI can advise and reflect, but it never modifies your plans or data.</p>
+            <p>When you use the AI assistant, your messages and activity context are sent to a secure server-side function that forwards them to OpenAI. No conversation history is stored on our servers. The AI can advise and reflect, but it never modifies your activities or data.</p>
+        </details>
+        <details>
+            <summary>How does the Door work?</summary>
+            <p>Each day, Gus gives your screen time one honest number, built from how you actually use your phone. Scroll until you hit it — then Gus closes the door. The only way back in is real, timed work: a focus session or a habit you actually do. There's no banking, no borrowing, and no buying your way out. Misses are weather, not failure — tomorrow starts clean.</p>
         </details>
         <details>
             <summary>How do I delete my data?</summary>
-            <p>Since all data lives on your device, deleting the Arc app removes everything permanently. There is no server-side data, no account, and nothing to request deletion of.</p>
+            <p>Since all your activity data lives on your device, deleting the Gus app removes everything permanently. There is no server-side account, and nothing to request deletion of.</p>
         </details>
     </div>
 </div>

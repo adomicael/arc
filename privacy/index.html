@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arc — Privacy Policy</title>
-    <meta name="description" content="Arc privacy policy. How your data is handled.">
+    <title>Gus — Privacy Policy</title>
+    <meta name="description" content="Gus privacy policy. How your data is handled.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,13 +12,16 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #F7F6F4;
-            --text: #1a1a1a;
-            --text-secondary: #666;
-            --text-tertiary: #999;
-            --border: #e0ddd8;
-            --card-bg: #ffffff;
-            --nav-bg: rgba(247, 246, 244, 0.8);
+            /* Canonical Gus palette (docs/GUS_ASSET_PROMPTS.md) */
+            --bg: #F8F5EF;
+            --text: #2B2119;
+            --text-secondary: #6F6353;
+            --text-tertiary: #A4967F;
+            --border: #E4DBC9;
+            --card-bg: #FDFBF6;
+            --nav-bg: rgba(248, 245, 239, 0.82);
+            --accent: #2F5D46;
+            --brass: #C9A96A;
             --max-width: 1080px;
         }
 
@@ -56,6 +59,17 @@
             letter-spacing: -0.02em;
             color: var(--text);
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav .logo .tag {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 2px var(--brass);
         }
 
         nav .nav-links {
@@ -119,7 +133,7 @@
             margin-bottom: 6px;
         }
 
-        a { color: var(--text); text-decoration: none; }
+        a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
         strong { color: var(--text); font-weight: 600; }
@@ -167,7 +181,7 @@
 <body>
 
 <nav>
-    <a href="/arc/" class="logo">Arc</a>
+    <a href="/arc/" class="logo"><span class="tag" aria-hidden="true"></span>Gus</a>
     <div class="nav-links">
         <a href="/arc/support/">Support</a>
         <a href="/arc/privacy/">Privacy</a>
@@ -176,23 +190,23 @@
 
 <div class="content">
     <h1>Privacy Policy</h1>
-    <p class="subtitle">Last updated: June 15, 2026</p>
+    <p class="subtitle">Last updated: July 11, 2026</p>
 
-    <h2>What Arc Collects</h2>
-    <p>Arc stores all your data locally on your device using Apple's SwiftData framework. This includes:</p>
+    <h2>What Gus Collects</h2>
+    <p>Gus stores all your data locally on your device using Apple's SwiftData framework. This includes:</p>
     <ul>
-        <li>Goals, plans, and tasks you create</li>
+        <li>Activities, plans, and tasks you create</li>
         <li>Time tracking sessions</li>
         <li>Notes, weekly commitments, and preferences</li>
     </ul>
-    <p>This personal goal data stays on your device unless you use the AI chat feature.</p>
+    <p>This personal activity data stays on your device unless you use the AI chat feature.</p>
 
     <h2>AI Chat</h2>
-    <p>When you use the per-goal AI assistant, your messages and goal context are sent to a Supabase Edge Function, which forwards them to OpenAI for processing. These messages are used solely to generate a response and are not stored on our servers.</p>
-    <p>OpenAI may process your messages according to their own privacy policy. No conversation history is stored server-side by Arc.</p>
+    <p>When you use the per-activity AI assistant, your messages and activity context are sent to a Supabase Edge Function, which forwards them to OpenAI for processing. These messages are used solely to generate a response and are not stored on our servers.</p>
+    <p>OpenAI may process your messages according to their own privacy policy. No conversation history is stored server-side by Gus.</p>
 
     <h2>Anonymous Authentication</h2>
-    <p>Arc creates an anonymous device-level session via Supabase Auth for rate limiting and app functionality. This session:</p>
+    <p>Gus creates an anonymous device-level session via Supabase Auth for rate limiting and app functionality. This session:</p>
     <ul>
         <li>Contains no personally identifiable information (PII)</li>
         <li>Is not linked to any email, phone number, or account</li>
@@ -200,32 +214,34 @@
     </ul>
 
     <h2>Product Analytics</h2>
-    <p>Arc uses PostHog to understand onboarding flow, paywall events, and broad product interaction patterns. Analytics events are tied to a randomly generated install ID, not your name, email, Apple ID, or advertising identifier.</p>
+    <p>Gus uses PostHog to understand onboarding flow, paywall events, and broad product interaction patterns. Analytics events are tied to a randomly generated install ID, not your name, email, Apple ID, or advertising identifier.</p>
     <p>PostHog is configured for manual product analytics only — no session replay and no automatic screen recording. PostHog does not receive your advertising identifier. Advertising attribution is handled separately, and only with your permission — see Advertising and Attribution below.</p>
 
     <h2>Subscriptions and Purchases</h2>
-    <p>Arc uses Apple StoreKit and Superwall to present paywalls, manage subscription status, and support the free trial. Purchase processing is handled by Apple. Arc uses subscription status only to unlock or gate app access.</p>
+    <p>Gus uses Apple StoreKit and Superwall to present paywalls, manage subscription status, and support the free trial. Purchase processing is handled by Apple. Gus uses subscription status only to unlock or gate app access.</p>
 
     <h2>Advertising and Attribution</h2>
-    <p>Arc uses the TikTok Business SDK to measure how well our advertising performs — for example, whether someone who saw an Arc ad on TikTok went on to install the app, start a free trial, or subscribe.</p>
-    <p>For this, Arc shares certain events — such as app installs, trial starts, and purchases — with TikTok. <strong>Only if you grant permission through Apple's App Tracking Transparency prompt</strong> does Arc also share your device's advertising identifier (IDFA). If you decline, your advertising identifier is not shared. You can change this at any time in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking.</p>
-    <p>This is the only third-party advertising or attribution service Arc uses.</p>
+    <p>Gus uses attribution and measurement services — the TikTok Business SDK and AppsFlyer — to understand how well our advertising performs: for example, whether someone who saw a Gus ad went on to install the app, start a free trial, or subscribe.</p>
+    <p>For this, Gus shares certain events — such as app installs, trial starts, and purchases — with these services. <strong>Only if you grant permission through Apple's App Tracking Transparency prompt</strong> does Gus also share your device's advertising identifier (IDFA). If you decline, your advertising identifier is not shared. You can change this at any time in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking.</p>
+    <p>These are the only third-party advertising or attribution services Gus uses.</p>
 
     <h2>Notifications</h2>
-    <p>Arc may request permission to send local notifications for daily nudges and per-goal reminders. All notifications are scheduled locally on your device. No push notification infrastructure or server is involved.</p>
+    <p>Gus schedules local notifications on your device — daily nudges, per-activity reminders, and your morning screen-time receipt. These are generated on-device.</p>
+    <p>To keep the Door's Lock Screen Live Activity current in the background — so your day's screen-time status stays accurate even when the app is closed — Gus also uses Apple's Push Notification service (APNs), delivered through a Supabase Edge Function. This uses an anonymous, per-install push token and only the minimal state needed to render that Live Activity. It is not linked to any account and carries no personally identifiable information.</p>
 
     <h2>Third-Party Services</h2>
     <ul>
-        <li><strong>Supabase</strong> — Edge Functions hosting and anonymous auth. <a href="https://supabase.com/privacy">Privacy Policy</a></li>
+        <li><strong>Supabase</strong> — Edge Functions hosting, anonymous auth, and Live Activity push delivery. <a href="https://supabase.com/privacy">Privacy Policy</a></li>
         <li><strong>OpenAI</strong> — AI chat processing. <a href="https://openai.com/privacy">Privacy Policy</a></li>
         <li><strong>PostHog</strong> — product analytics. <a href="https://posthog.com/privacy">Privacy Policy</a></li>
         <li><strong>Superwall</strong> — paywall and subscription management. <a href="https://superwall.com/privacy">Privacy Policy</a></li>
         <li><strong>TikTok Business SDK</strong> — advertising attribution and measurement. <a href="https://www.tiktok.com/legal/page/global/privacy-policy/en">Privacy Policy</a></li>
+        <li><strong>AppsFlyer</strong> — mobile attribution and measurement. <a href="https://www.appsflyer.com/legal/privacy-policy/">Privacy Policy</a></li>
     </ul>
-    <p>Arc shares the limited advertising and attribution data described above with TikTok. Other than that, Arc does not sell or share your personal data with third parties for advertising.</p>
+    <p>Gus shares the limited advertising and attribution data described above with TikTok and AppsFlyer. Other than that, Gus does not sell or share your personal data with third parties for advertising.</p>
 
     <h2>Data Deletion</h2>
-    <p>Your goals, tasks, notes, and time logs are stored locally. Deleting the Arc app from your device permanently deletes that local data. Anonymous backend and analytics identifiers are not tied to an account you can log into.</p>
+    <p>Your activities, tasks, notes, and time logs are stored locally. Deleting the Gus app from your device permanently deletes that local data. Anonymous backend and analytics identifiers are not tied to an account you can log into.</p>
 
     <h2>Contact</h2>
     <p>For questions about this privacy policy, contact: <a href="mailto:arc@synced.design">arc@synced.design</a></p>

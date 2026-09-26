@@ -190,7 +190,7 @@
 
 <div class="content">
     <h1>Privacy Policy</h1>
-    <p class="subtitle">Last updated: August 9, 2026</p>
+    <p class="subtitle">Last updated: September 26, 2026</p>
 
     <h2>What Gus Collects</h2>
     <p>Gus stores all your data locally on your device using Apple's SwiftData framework. This includes:</p>
@@ -199,7 +199,7 @@
         <li>Time tracking sessions</li>
         <li>Notes, weekly commitments, and preferences</li>
     </ul>
-    <p>This personal activity data stays on your device unless you use the AI chat feature.</p>
+    <p>This personal activity data stays on your device, except for the specific pieces described below: the AI chat, the goal you type in onboarding (product analytics), and the Activity name shown on the Lock Screen.</p>
 
     <h2>AI Chat</h2>
     <p>When you use the per-activity AI assistant, your messages and activity context are sent to a Supabase Edge Function, which forwards them to OpenAI for processing. These messages are used solely to generate a response and are not stored on our servers.</p>
@@ -214,11 +214,11 @@
     </ul>
 
     <h2>Product Analytics</h2>
-    <p>Gus uses PostHog to understand onboarding flow, paywall events, and broad product interaction patterns. Analytics events are tied to a randomly generated install ID, not your name, email, Apple ID, or advertising identifier.</p>
+    <p>Gus uses PostHog to understand onboarding flow, paywall events, and broad product interaction patterns. Analytics events are tied to a randomly generated install ID, not your name, email, Apple ID, or advertising identifier. They include the goal you type during onboarding, so we can learn what people want their time back for.</p>
     <p>PostHog is configured for manual product analytics only — no session replay and no automatic screen recording. PostHog does not receive your advertising identifier. Advertising attribution is handled separately, and only with your permission — see Advertising and Attribution below.</p>
 
     <h2>Subscriptions and Purchases</h2>
-    <p>Gus uses Apple StoreKit and Superwall to present paywalls, manage subscription status, and support the free trial. Purchase processing is handled by Apple. Gus uses subscription status only to unlock or gate app access.</p>
+    <p>Gus uses Apple StoreKit and Superwall to present paywalls, manage subscription status, and support the free trial. Purchase processing is handled by Apple. Gus uses subscription status only to unlock or gate app access. To personalize the paywall, Gus sends Superwall your first name (if you enter one) and your onboarding answers, such as your age range and daily scroll time.</p>
 
     <h2>Advertising and Attribution</h2>
     <p>Gus uses attribution and measurement services — the TikTok Business SDK and AppsFlyer — to understand how well our advertising performs: for example, whether someone who saw a Gus ad went on to install the app, start a free trial, or subscribe. AppsFlyer also forwards these measurement events to the advertising platforms where we run campaigns — currently Meta (Facebook and Instagram) and TikTok — so those platforms can measure the ads we buy from them.</p>
@@ -227,7 +227,7 @@
 
     <h2>Notifications</h2>
     <p>Gus schedules local notifications on your device — daily nudges, per-activity reminders, and your morning screen-time receipt. These are generated on-device.</p>
-    <p>To keep the Door's Lock Screen Live Activity current in the background — so your day's screen-time status stays accurate even when the app is closed — Gus also uses Apple's Push Notification service (APNs), delivered through a Supabase Edge Function. This uses an anonymous, per-install push token and only the minimal state needed to render that Live Activity. It is not linked to any account and carries no personally identifiable information.</p>
+    <p>To keep the Door's Lock Screen Live Activity current in the background — so your day's screen-time status stays accurate even when the app is closed — Gus also uses Apple's Push Notification service (APNs), delivered through a Supabase Edge Function. This uses an anonymous, per-install push token and only the minimal state needed to render that Live Activity. It carries only what the Live Activity shows, such as your Activity's name and the time, and is not linked to any account.</p>
 
     <h2>Third-Party Services</h2>
     <ul>
